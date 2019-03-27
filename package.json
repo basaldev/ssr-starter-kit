@@ -1,0 +1,58 @@
+{
+  "name": "rakuten-react-kit",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "micro build/server.js",
+    "clean": "rm -fr build",
+    "copy": "mkdir build && cp -R src/static build/static",
+    "build": "npm run clean && npm run copy && npm run build:server && npm run build:client",
+    "build:client": "webpack --mode=production",
+    "build:server": "ncc build src/server/index.tsx -o build/server",
+    "dev:client": "webpack-dev-server",
+    "dev:server": "TS_NODE_FILES=true node -r ts-node/register -r tsconfig-paths/register node_modules/.bin/micro-dev src/server/index.tsx",
+    "format": "prettier --single-quote --print-width 120 --trailing-comma es5 --write 'src/**/*.{ts,tsx}'",
+    "lint-staged": "lint-staged",
+    "lint-pass": "echo '\\033[4;32m♡' Awesome! You are ready to commit ♡' \\033[0m'"
+  },
+  "author": "Adam Munoz",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^11.11.7",
+    "@zeit/ncc": "^0.17.0",
+    "lint-staged": "^8.1.5",
+    "micro": "^9.3.3",
+    "micro-dev": "^3.0.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "1.16.4",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.3.4000",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "empty": "^0.10.1",
+    "express": "^4.16.4",
+    "js-atom": "^0.4.0",
+    "js-logger": "^1.6.0",
+    "page": "^1.11.4",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
+  "lint-staged": {
+    "{src/**/*.{ts,tsx}": [
+      "prettier --single-quote --print-width 120 --trailing-comma es5 --write",
+      "git add"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged",
+    "lint-pass"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*"]
+    },
+    "lib": ["es6", "dom", "esnext"],
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node"
+  }
+}
