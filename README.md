@@ -41,7 +41,7 @@ For both
 npm run dev
 ```
 
-## Prodution build
+## Production build
 
 For server
 
@@ -61,7 +61,7 @@ For both
 npm run build
 ```
 
-Start application in build folder
+## Start application in build folder
 
 ```
 npm start
