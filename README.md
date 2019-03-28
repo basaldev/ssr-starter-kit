@@ -6,7 +6,7 @@
 .
 ├── build
 │   ├── client    // client build files
-│   └── server    // client build files
+│   └── index.js  // server build file
 ├── src
 │   ├── client    // client source code
 │   ├── server    // server source code
@@ -61,7 +61,7 @@ For both
 npm run build
 ```
 
-Start application on local
+Start application in build folder
 
 ```
 npm start
@@ -69,7 +69,7 @@ npm start
 
 ## Deployement
 
-Deploy to your Now space
+Deploy application to your Now space
 
 ```
 npm run deploy
