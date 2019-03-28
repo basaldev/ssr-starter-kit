@@ -1,12 +1,3 @@
-/*
- * Rakuten React kit
- *
- * Copyright © 2016 Rakuten, Inc. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import { createAtom } from 'js-atom';
 
 export type HomePage = { name: 'HOME_PAGE' };
@@ -26,8 +17,7 @@ const defaultState: State = {
 let store;
 
 export const createStore = () => {
-  const state = (typeof window !== 'undefined' && window['$RRK'])
-  ? window['$RRK'].state : defaultState;
+  const state = (typeof window !== 'undefined' && window['$EXO']) ? window['$EXO'].state : defaultState;
   store = createAtom(state);
 }
 

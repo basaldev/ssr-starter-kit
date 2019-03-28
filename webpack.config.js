@@ -7,7 +7,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'build/client'),
-    publicPath: '/',
+    publicPath: '/client',
     filename: 'bundle.js'
   },
 
@@ -27,6 +27,6 @@ module.exports = {
     hot: true,
     inline: true,
     historyApiFallback: true,
-    contentBase: path.join(__dirname, 'src/static'),
+    contentBase: path.join(__dirname, 'src/client/static'),
   }
 };

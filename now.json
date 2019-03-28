@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "name": "express",
+  "name": "ssr",
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
   "builds": [
-    { "src": "build/server/index.js", "use": "@now/node" }
+    { "src": "build/index.js", "use": "@now/node" },
+    { "src": "build/client/**", "use": "@now/static" }
   ],
   "routes": [
-    { "src": "(.*)", "dest": "build/server/index.js" }
+    { "src": "/client/(.*)", "dest": "build/client/$1" },
+    { "src": "(.*)", "dest": "build/index.js" }
   ]
 }
