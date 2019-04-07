@@ -10,7 +10,7 @@
     "build": "npm run clean && npm run build:server && npm run build:client",
     "build:client": "webpack --mode=production",
     "build:server": "ncc build src/server/main.ts -o build",
-    "dev": "CLIENTrun-p dev:*",
+    "dev": "run-p dev:*",
     "dev:client": "webpack-dev-server",
     "dev:server": "NODE_ENV=development TS_NODE_FILES=true node -r ts-node/register -r tsconfig-paths/register node_modules/.bin/micro-dev src/server/main.ts",
     "deploy": "now",
