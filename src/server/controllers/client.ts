@@ -1,10 +1,9 @@
-import devProxy from 'server/utils/devProxy';
-
-export default async(req, res, next) => {
+export default async(req, res) => {
   try {
-    const html = await devProxy(req.url);
-    res.status(200).end(html);
+    res.status(200);
+    res.devProxy();
   } catch (e) {
-    next(e);
+    res.status(500);
+    throw e;
   }
 };

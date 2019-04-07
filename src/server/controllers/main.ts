@@ -1,10 +1,9 @@
-import indexView from 'server/views/index';
-
-export default (req, res, next) => {
+export default (req, res) => {
   try {
-    const html = indexView(req.client);
-    res.status(200).end(html);
+    res.status(200);
+    res.renderStream();
   } catch (e) {
-    next(e);
+    res.status(500);
+    throw e;
   }
 };
