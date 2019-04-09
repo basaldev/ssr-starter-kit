@@ -7,7 +7,7 @@ const logger = getLogger('Renderer');
 export default async function render() {
   logger.time('DOM Render');
   const App = (await import('client/components/container/App')).App;
-  ReactDOM.render(<App />, document.getElementById('app'));
+  ReactDOM.hydrate(<App />, document.getElementById('app'));
   logger.timeEnd('DOM Rendered');
 }
 
