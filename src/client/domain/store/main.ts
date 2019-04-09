@@ -7,10 +7,12 @@ export type DetailPage = { name: 'DETAIL_PAGE' };
 export type Page = HomePage | DetailPage;
 
 export type State = {
+  xss: string;
   currentPage: Page;
 };
 
 const defaultState: State = {
+  xss: '</script><script>alert(window)</script>',
   currentPage: { name: 'HOME_PAGE' }
 };
 

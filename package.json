@@ -45,7 +45,8 @@
     "js-logger": "^1.6.0",
     "page": "^1.11.4",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "serialize-javascript": "^1.6.1"
   },
   "lint-staged": {
     "{src/**/*.{ts,tsx}": [
